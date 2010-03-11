@@ -4,6 +4,11 @@
   (subsection
     (title "Overview")
     (para "This package provides a portable abstraction around the various
-      dynamic library/symbol loading interfaces on various platforms."))
+      dynamic library/symbol loading interfaces on various platforms.")
+    (para "It currently provides a uniform interface around:")
+    (para
+      (list
+        (item (item package "dlfcn") " - " (item c_function "dlopen()") ", " (item c_function "dlsym()") " on POSIX platforms.")
+        (item (item c_function "LoadLibrary()") ", " (item c_function "GetProcAddress()") " on Windows."))))
 
 ) ; end of section
