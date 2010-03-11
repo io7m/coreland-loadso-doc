@@ -1,0 +1,33 @@
+(section
+  (ref "loadso_symbol")
+  (title "loadso_symbol")
+  (para function_desc "Retrieve address of non-function object from library.")
+  (subsection
+    (title "Synopsis")
+    (para-verbatim function_synopsis
+"int loadso_symbol (loadso_handle_t handle, const char *symbol, void **pointer);"))
+  (subsection
+    (title "Description")
+    (para
+      "The " (item c_function "loadso_symbol") " function retrieves the
+      address of the non-function object named " (item parameter "symbol")
+      " from the library specified by " (item parameter "handle") " and
+      saves the address in " (item parameter "*pointer") ", returning "
+      (item constant "1") ".")
+    (para
+      "If the named object cannot be found, the function returns " (item constant "0")
+      " and sets " (item parameter "*pointer") " to " (item constant "NULL") "."))
+  (subsection
+    (title "Preconditions")
+    (para-verbatim example
+"(name != NULL) /\\ valid (handle) /\\ (pointer != NULL)")
+    (para "The " (item parameter "name") " parameter must be non-" (item constant "NULL") ".")
+    (para "The " (item parameter "handle") " parameter must refer to a valid library handle.")
+    (para "The " (item parameter "pointer") " parameter must be non-" (item constant "NULL") "."))
+  (subsection
+    (title "Postconditions")
+    (para-verbatim example
+"(result == 1) => (*pointer != NULL)
+(result == 0) => (*pointer == NULL)")
+    (para "Iff the function result is equal to " (item constant "1") ", the value of "
+      (item parameter "pointer") " will be non-" (item constant "NULL") ".")))

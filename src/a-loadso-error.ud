@@ -1,0 +1,21 @@
+(section
+  (ref "loadso_error")
+  (title "loadso_error")
+  (para function_desc "Retrieve current error string.")
+  (subsection
+    (title "Synopsis")
+    (para-verbatim function_synopsis
+"const char *loadso_error (void);"))
+  (subsection
+    (title "Description")
+    (para
+      "The " (item c_function "loadso_error") " function returns
+      the current " (item constant "NULL") "-terminated error string.
+      The error string may be overwritten by each successive call to any
+      of the " (item package "loadso") " functions so programs wishing to
+      use the strings for any length of time must make copies."))
+  (subsection
+    (title "Postconditions")
+    (para-verbatim example
+"result != NULL")
+    (para "The function result will not be " (item constant "NULL") ".")))

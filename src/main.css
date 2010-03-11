@@ -127,7 +127,8 @@ table.exception_table td {
 .ada_type_synopsis,
 .ada_generic_synopsis,
 .ada_package_synopsis,
-.tag_synopsis
+.tag_synopsis,
+.type_synopsis
 {
   border: 1px solid #ddd;
   padding: 1em;

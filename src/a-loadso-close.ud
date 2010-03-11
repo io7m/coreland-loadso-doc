@@ -1,0 +1,29 @@
+(section
+  (ref "loadso_close")
+  (title "loadso_close")
+  (para function_desc "Close dynamic library.")
+  (subsection
+    (title "Synopsis")
+    (para-verbatim function_synopsis
+"int loadso_close (loadso_handle_t *handle);"))
+  (subsection
+    (title "Description")
+    (para
+      "The " (item c_function "loadso_close") " function
+      closes the dynamic library specified by " (item parameter "handle")
+      ", sets " (item parameter "handle") " to " (item constant "NULL")
+      " and returns " (item constant "1") ".")
+    (para
+      "If the library cannot be closed, the function returns " (item constant "0")
+      " and leaves " (item parameter "handle") " untouched."))
+  (subsection
+    (title "Preconditions")
+    (para-verbatim example
+"valid(*handle)")
+    (para "The " (item parameter "handle") " parameter must refer to a valid library handle."))
+  (subsection
+    (title "Postconditions")
+    (para-verbatim example
+"(result == 1) => (handle == NULL)")
+    (para "Iff the function result is " (item constant "1") ", the "
+      (item parameter "handle") " parameter will be " (item constant "NULL") ".")))

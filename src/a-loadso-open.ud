@@ -1,0 +1,33 @@
+(section
+  (ref "loadso_open")
+  (title "loadso_open")
+  (para function_desc "Open dynamic library.")
+  (subsection
+    (title "Synopsis")
+    (para-verbatim function_synopsis
+"int loadso_open (const char *name, loadso_handle_t *handle);"))
+  (subsection
+    (title "Description")
+    (para
+      "The " (item c_function "loadso_open") " function
+      opens the dynamic library specified by " (item parameter "name")
+      ", saving a handle to the library in " (item parameter "handle") "
+      and returning " (item constant "1") ".")
+    (para
+      "If the library cannot be opened, the function returns " (item constant "0")
+      " and sets " (item parameter "handle") " to " (item constant "NULL") "."))
+  (subsection
+    (title "Preconditions")
+    (para-verbatim example
+"(name != NULL) /\\ (handle != NULL)")
+    (para "The " (item parameter "name") " parameter must be non-" (item constant "NULL") ".")
+    (para "The " (item parameter "handle") " parameter must be non-" (item constant "NULL") "."))
+  (subsection
+    (title "Postconditions")
+    (para-verbatim example
+"valid (handle) => (handle != NULL)
+(result == 1) => valid (handle)
+(result == 0) => (handle == NULL)")
+    (para "Iff the function result equals " (item constant "1")
+    ", then " (item parameter "handle") " is a valid library handle. Valid
+    implies that the given handle is not " (item constant "NULL") ".")))

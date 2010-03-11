@@ -1,0 +1,29 @@
+(section
+  (title "loadso API reference")
+
+  (subsection
+    (title "Types")
+    (subsection
+      (title "loadso_handle_t")
+      (para "The " (item c_type "loadso_handle_t") " type represents
+        an opaque library handle."))
+    (subsection
+      (title "loadso_pointer_t")
+      (para-verbatim type_synopsis
+"typedef void * (*loadso_pointer_t) (void *);")
+      (para "The " (item c_type "loadso_pointer_t") " type represents
+        a pointer that may be converted to any function pointer type.")))
+
+  (subsection
+    (title "Preconditions / Postconditions")
+    (para "The functions in this library have certain preconditions
+      that must be met and postconditions that the functions promise
+      to satisfy if the preconditions are met. The conditions are
+      specified in this documentation and are checked at runtime using
+      the standard " (item c_function "assert") " function."))
+
+  (include "a-loadso-open.ud")
+  (include "a-loadso-symbol.ud")
+  (include "a-loadso-function.ud")
+  (include "a-loadso-close.ud")
+  (include "a-loadso-error.ud"))

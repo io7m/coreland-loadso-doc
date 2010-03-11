@@ -1,0 +1,33 @@
+(section
+  (ref "loadso_function")
+  (title "loadso_function")
+  (para function_desc "Retrieve address of function from library.")
+  (subsection
+    (title "Synopsis")
+    (para-verbatim function_synopsis
+"int loadso_function (loadso_handle_t handle, const char *symbol, loadso_function_t *function);"))
+  (subsection
+    (title "Description")
+    (para
+      "The " (item c_function "loadso_function") " function retrieves the
+      address of the function named " (item parameter "symbol")
+      " from the library specified by " (item parameter "handle") " and
+      saves the address in " (item parameter "function") ", returning "
+      (item constant "1") ".")
+    (para
+      "If the named object cannot be found, the function returns " (item constant "0")
+      " and sets " (item parameter "function") " to " (item constant "NULL") "."))
+  (subsection
+    (title "Preconditions")
+    (para-verbatim example
+"(name != NULL) /\\ valid (handle) /\\ (function != NULL)")
+    (para "The " (item parameter "name") " parameter must be non-" (item constant "NULL") ".")
+    (para "The " (item parameter "handle") " parameter must refer to a valid library handle.")
+    (para "The " (item parameter "function") " parameter must be non-" (item constant "NULL") "."))
+  (subsection
+    (title "Postconditions")
+    (para-verbatim example
+"(result == 1) => (*function != NULL)
+(result == 0) => (*function == NULL)")
+    (para "Iff the function result is equal to " (item constant "1") ", the value of "
+      (item parameter "function") " will be non-" (item constant "NULL") ".")))
