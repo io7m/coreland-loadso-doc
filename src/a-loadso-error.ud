@@ -11,7 +11,7 @@
     (para
       "The " (item c_function "loadso_error") " function returns
       the current " (item constant "NULL") "-terminated error string.
-      The error string may be overwritten by each successive call to any
+      The string may be overwritten by each successive call to any
       of the " (item package "loadso") " functions so programs wishing to
       use the strings for any length of time must make copies."))
   (subsection
