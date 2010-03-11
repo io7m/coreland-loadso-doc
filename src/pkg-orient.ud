@@ -1,0 +1,9 @@
+(section
+  (title "Orientation")
+
+  (subsection
+    (title "Overview")
+    (para "This package provides a portable abstraction around the various
+      dynamic library/symbol loading interfaces on various platforms."))
+
+) ; end of section
